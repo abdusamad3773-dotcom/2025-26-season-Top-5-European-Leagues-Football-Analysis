@@ -44,3 +44,40 @@ To assess and evaluate the data integrity and reliability of the data. I have us
 •	Comprehensive: Covers all data from all players registered across all Top 5 European Leagues (Premier League, La Liga, Serie A, Bundesliga and Ligue 1) for the 2025-26 season.
 •	Current: The data is collected and up to date of the previous season.
 •	Cited: The data collected is sourced with full credit to FBRef.
+
+
+## Process Phase:
+
+In this phase, I started standardising and cleaning the data from all datasets using MS Excel. For the purpose of data cleaning, I created a copy of the workbook to keep the cleaned data separate and the original datasets intact. I also added a new sheet to the new copied workbook called “Audit Log” which was to record the changes and alterations I have made in the workbook for processing stage. I have undertaken the following steps to perform the data cleaning process:
+1.	Standardising Primary Positions
+ * 	Issue: Raw FBRef data contained dual position strings of 9 categorical groups in Pos column which can make it difficult to aggregate data accurately by using main positional roles.
+ * 	Action Taken: Standardised positions across all sheets (except Goalkeeping Stats) by creating a new column called “Primary_Pos” and used the text extraction function ‘=LEFT(D2, 2) to extract the primary roles.
+ * 	Result: Reduced position categories from 9 messy variations to 4 categorical groups (FW, MF, DF, GK).
+2.	Deleted Redundant Columns
+ * 	Issue: Raw Data consisted of useless and redundant columns called “Matches” (which held no records except the info ‘Matches’ for every single record) and “-9999” (which had useless unique tagcodes for each record that were not beneficial for analysis).
+ * 	Action Taken: Deleted those 2 columns across every dataset.
+ * 	Result: Datasets no longer contain those trailing columns.
+3.	Renamed Duplicate Column Name
+ * 	Issue: Goalkeeping Stats had 2 columns under the same name “Save%” which can lead to confusion.
+ *  Action Taken: Renamed the 2nd column with same name,which was under the category of Penalty, to “Save%PK”.
+ * 	Result: The dataset no longer contains 2 columns with same name. Save% represents Open Play Saves and Save%PK represents Penalty Saves.
+4.	Renamed Duplicate Columns 
+ * 	Issue: Standard Stats had columns under same name and different category that was not specified.
+ * 	Action Taken: Renamed all the duplicate columns and columns that needed specifications(Gls -> Gls/90 , Ast -> Ast/90 , G+A -> G+A/90 , G-PK -> G-PK/90 , G+A-PK -> G+A-PK/90).
+ * 	Result: The dataset no longer contains columns with same names and has added context to avoid confusion.
+As I was looking into the data through Filter to check whether any column consisted of blank values. I came across many columns having missing values. To fix this, I performed the following 2 steps-
+5.	Replaced missing values across demographic data-
+ * 	Issue: All datasets, except goalkeeping stats, had missing values for the columns ‘Nation’ , ‘Age’ and ‘Born’.
+ * 	Action Taken: Used Find & Replace function to replace all missing values in ‘Nation’ column with Unknown and in ‘Age’ and ‘Born’ values with 0.
+ * 	Result: The datasets no longer contains any blank demographic values.
+6.	Replaced missing values across Performance data-
+ * 	Issue: Some datasets had no values for certain metrics, which were for ‘SoT%’ , ‘G/Sh’ and ‘GSoT’ in Shooting Stats and ‘Save%’ , ‘CS%’ and ‘Save%PK’ in Goalkeeping Stats.
+ * 	Action Taken: Used Find & Replace function to replace all missing values in those columns to 0.
+ * 	Result: The datasets no longer contains any missing performance metrics. 
+7.	Dataset had columns with no data
+ * 	Issue: Defensive Stats had 2 columns ‘PKwon’ and ‘PKcon’ which had no actual values.
+ * 	Action Taken: Deleted both the columns.
+ * 	Result: Dataset no longer contains empty columns.
+
+The workbook has been examined fully and cleaned of any missing values, redundant columns and spelling mistakes. Now the data is ready to be exported for the further analysis stage. 
+
