@@ -107,7 +107,7 @@ To delve into the analysis and extract meaningful insights from the dataset, I w
 3.	Identify defenders that stand out in having exceptional defensive work rates alongside their high disciplinary risks
 4.	Identify goalkeepers that achieve high save percentages despite facing high shots on target.
 
-## Objective 1 
+### Objective 1 
 
 **Forward Shooting Efficiency & Goal Conversion**
 
@@ -139,3 +139,15 @@ ORDER BY
   G_Sh DESC
 LIMIT 10
 ```
+
+Output-
+
+<img width="740" height="234" alt="obj1op" src="https://github.com/user-attachments/assets/069ced20-d017-49e8-a924-4ddfc421b2df" />
+
+Key Findings-
+*	Ermedin Demirović leads in the list among all qualifying starting forwards across the Top 5 European leagues. He boasts an impressive 0.27 conversion rate while also maintaining 53% shot accuracy, meaning over half of the shots he has taken hit the goal target.
+*	Pavel Šulc, despite having a lower shot accuracy of 40.9%, has the highest goals per shot on target with a staggering 61% conversion rate, showing his lethal finishing ability when his shots are target.
+*	Harry Kane stands out as an extremely high volume striker, despite taking nearly double the average shots of other players in the list and still maintaining a conversion rate of 0.22, shows his world class finishing capability.
+*	The presence of 2 Barcelona players on the list, Ferran Torres and Robert Lewandowski, shows exceptional efficiency in Barca’s frontline, supported with high quality playmakers like Lamine Yamal, Raphinha and Pedri.
+*	João Pedro being on the list supports his rightful individual achievement he earned where he was named Chelsea’s Men’s Player of the Season. 
+
