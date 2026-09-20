@@ -28,6 +28,7 @@ FootyStories Audience(The Fans): The viewers, who look for captivating and engag
 ## Prepare Phase:
 
 For the purpose of gathering the relevant datasets to work with. I researched and extracted datasets from FBRef.com, which is a popular website that contains football statistics and data across 100+ teams from both men and women’s football. All the data was collected directly from FBRef. The data is used strictly for non commercial, educational and portfolio purposes. Full credit attributed to FBRef as the original owners of the data. 
+
 I extracted the raw data from FBRef, for football statistics for the season 2025-2026, in CSV format and then copy pasted the same on my MS Excel workbook. I used Text to Columns feature on MS Excel to transform the data into structured rows and columns by using commas ( , ) as the delimiter.
 
 [Raw Dataset](./FootballPlayers2025-26DatabyMe.xlsx)
@@ -39,11 +40,12 @@ The workbook is structured into 4 different worksheets containing the following 
 4.	Defensive Stats (2839 rows, 29 columns): Contains data relating to defensive work rates and disciplinary conduct.
 
 To assess and evaluate the data integrity and reliability of the data. I have used and applied the ROCCC framework for the data I have collected:
-•	Reliable: The data was sourced from FBRef, which is a widely recognized database for historical football and sports analytics, ensuring reliability.
-•	Original: The data is collected directly from official and live match tracking systems.
-•	Comprehensive: Covers all data from all players registered across all Top 5 European Leagues (Premier League, La Liga, Serie A, Bundesliga and Ligue 1) for the 2025-26 season.
-•	Current: The data is collected and up to date of the previous season.
-•	Cited: The data collected is sourced with full credit to FBRef.
+
+* Reliable: The data was sourced from FBRef, which is a widely recognized database for historical football and sports analytics, ensuring reliability.
+* Original: The data is collected directly from official and live match tracking systems.
+* Comprehensive: Covers all data from all players registered across all Top 5 European Leagues (Premier League, La Liga, Serie A, Bundesliga and Ligue 1) for the 2025-26 season.
+* Current: The data is collected and up to date of the previous season.
+* Cited: The data collected is sourced with full credit to FBRef.
 
 
 ## Process Phase:
@@ -92,4 +94,16 @@ I will be using SQL for analysing the data. Before beginning with the data analy
 * [Shooting Stats CSV File](./ShootingStats.csv)
 * [Goalkeeping Stats CSV File](./GoalkeepingStats.csv)
 * [Defensive Stats CSV File](./DefensiveStats.csv)
+
+Now the .csv files are ready to be uploaded and added to BigQuery databases as tables under datasets. I uploaded all of the datasets to BigQuery to perform the analysis process.
+
+Note: The cleaned datasets in .csv format contained special characters in its columns (i.e. slashes / ) that BigQuery didn’t allow to be uploaded to its databases. To counter this, I went to the Advanced Settings under the Create Table options and changed the Column Name Character Map from “Default” to “V2”.  This option automatically changed the special characters to SQL readable form, which were replacing them with underscores (like converting G/Sh -> G_Sh)
+
+<img width="1468" height="705" alt="bqfootysets" src="https://github.com/user-attachments/assets/caecca97-46ef-4a63-a717-ee98f2cb8aaf" />
+
+To delve into the analysis and extract meaningful insights from the dataset, I will be structuring the SQL queries to be run around the 4 objectives of this project that are-
+1.	Identify forwards that exhibit high shot accuracy and shot-to-goal conversion rates.
+2.	Identify players who lead in playmaking and goal contributions for their teams.
+3.	Identify defenders that stand out in having exceptional defensive work rates alongside their high disciplinary risks
+4.	Identify goalkeepers that achieve high save percentages despite facing high shots on target.
 
