@@ -107,3 +107,11 @@ To delve into the analysis and extract meaningful insights from the dataset, I w
 3.	Identify defenders that stand out in having exceptional defensive work rates alongside their high disciplinary risks
 4.	Identify goalkeepers that achieve high save percentages despite facing high shots on target.
 
+## Objective 1 
+
+**Forward Shooting Efficiency & Goal Conversion**
+
+To evaluate the most clinical forwards across Europe’s Top 5 Leagues, I will be using table shootingstats to run an SQL query on it. The analysis here focused on the terms Goal Conversion Rate (G_Sh) and Shot Accuracy (SoT%).
+
+To eliminate skewness and small sample bias, I focused strictly on high volume starting forwards, So I set up a minimum volume threshold and filters requiring a minimum playing time 15 full matches (90s >= 15.0) and more than 40 shots taken (Sh > 40)
+
