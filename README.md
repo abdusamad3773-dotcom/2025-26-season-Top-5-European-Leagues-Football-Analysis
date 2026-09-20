@@ -82,3 +82,14 @@ As I was looking into the data through Filter to check whether any column consis
 The workbook has been examined fully and cleaned of any missing values, redundant columns and spelling mistakes. Now the data is ready to be exported for the further analysis stage. 
 
 [Cleaned Data](./CleanedFDataWIP.xlsx)
+
+
+## Analysis Phase:
+
+I will be using SQL for analysing the data. Before beginning with the data analysis process, I had to upload the cleaned data from excel to BigQuery databases. The cleaned data had to be converted to .csv files as BigQuery does not read .xlsx excel file format. For this purpose, I have exported all of the worksheets from the cleaned data excel workbook in .csv file format for uploading it to BigQuery databases. 
+
+* [Standard Stats CSV File](./StandardStats.csv)
+* [Shooting Stats CSV File](./ShootingStats.csv)
+* [Goalkeeping Stats CSV File](./GoalkeepingStats.csv)
+* [Defensive Stats CSV File](./DefensiveStats.csv)
+
