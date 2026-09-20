@@ -115,3 +115,27 @@ To evaluate the most clinical forwards across Europe’s Top 5 Leagues, I will b
 
 To eliminate skewness and small sample bias, I focused strictly on high volume starting forwards, So I set up a minimum volume threshold and filters requiring a minimum playing time 15 full matches (90s >= 15.0) and more than 40 shots taken (Sh > 40)
 
+SQL Query-
+
+```sql
+SELECT 
+  Player,
+  Nation,
+  Squad,
+  Comp AS League,
+  `90s`,
+  Sh as Total_Shots,
+  `SoT%` AS Shot_Accuracy_Percentage,
+  Gls AS Goals,
+  G_Sh AS Goals_Per_Shot,
+  G_SoT AS Goals_Per_Shot_On_Target
+FROM 
+  `abdu-project-2026.footystories_data.shootingstats`
+WHERE
+  Primary_Pos = 'FW'
+  AND `90s` >= 15.0
+  AND Sh > 40
+ORDER BY 
+  G_Sh DESC
+LIMIT 10
+```
