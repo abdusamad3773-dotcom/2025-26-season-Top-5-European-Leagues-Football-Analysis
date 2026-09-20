@@ -142,7 +142,8 @@ LIMIT 10
 
 Output-
 
-<img width="588" height="198" alt="obj1op" src="https://github.com/user-attachments/assets/35033b31-41d3-4e56-851a-89aa90ffb8db" />
+<img width="588" height="198" alt="obj1op" src="https://github.com/user-attachments/assets/eb143a60-0ce2-4481-8e2e-637f3dfb80ad" />
+
 
 Key Findings-
 *	Ermedin Demirović leads in the list among all qualifying starting forwards across the Top 5 European leagues. He boasts an impressive 0.27 conversion rate while also maintaining 53% shot accuracy, meaning over half of the shots he has taken hit the goal target.
@@ -150,4 +151,71 @@ Key Findings-
 *	Harry Kane stands out as an extremely high volume striker, despite taking nearly double the average shots of other players in the list and still maintaining a conversion rate of 0.22, shows his world class finishing capability.
 *	The presence of 2 Barcelona players on the list, Ferran Torres and Robert Lewandowski, shows exceptional efficiency in Barca’s frontline, supported with high quality playmakers like Lamine Yamal, Raphinha and Pedri.
 *	João Pedro being on the list supports his rightful individual achievement he earned where he was named Chelsea’s Men’s Player of the Season. 
+
+
+## Objective 2 
+
+**Best Playmakers and Creative Players**
+
+To examine the top creative playmakers and contributers for the team, The table standardstats will be used as it consists of goal contribution metrics. The analysis here focused on Goals, Assists and Goal Contributions Per 90 Minutes.
+
+I have applied filters of Primary position being limited to only MF and a minimum playing time of 15 full matches (90s >= 15.0)
+
+Another important thing to note is although it was specifically mentioned for the query to be limited to only MF (Midfield) filter. The Primary_Pos “MF” included players who operate as central and wide attacking playmakers. In modern tactically fluid football, Wide attacking midfielders and wingers are considered as midfielders while operating as primary chance creators. As the objective specifically seeks offensive capabilities of players, the table will be populated by attacking playmakers than just central holding or defensive midfielders.
+
+SQL Query-
+
+```sql
+SELECT
+  Player,
+  Nation,
+  Squad,
+  Comp AS League,
+  `90s`,
+  Gls AS Goals,
+  Ast AS Assists,
+  `G+A` AS Goal_Contributions,
+  `G+A_90` AS Goal_Contributions_Per_90_Mins
+FROM
+  `abdu-project-2026.footystories_data.standardstats`
+WHERE
+  Primary_Pos = 'MF'
+  AND `90s` >= 15.0
+ORDER BY
+  `G+A_90` DESC
+LIMIT 10
+```
+
+Output-
+
+<img width="1158" height="442" alt="obj2op" src="https://github.com/user-attachments/assets/77060b28-16b4-456f-b887-8fcb3f679f59" />
+
+Key Findings-
+*	Michael Olise tops the list among all the top 10 playmakers here with an extraordinary stat of 1.32 goal contributions per 90 minutes. He finished off the season with 34 goals contributions (15 goals + 19 assists) which is an exceptional stat for a natural playmaker. He also outperforms the average goal contribution per 90 minutes among the list(which is 0.94 as shown in the query below) by 40%, solidifying his position as the most impactful overall playmaker in the season.
+
+```sql
+SELECT 
+  ROUND(AVG(`G+A_90`),2) AS Average_Goals_Contributions_Per_90_Minutes
+FROM
+  ( SELECT
+      `G+A_90`
+    FROM
+      `abdu-project-2026.footystories_data.standardstats`
+    WHERE
+      Primary_Pos = 'MF'
+      AND `90s` >= 15.0
+    ORDER BY
+      `G+A_90` DESC
+    LIMIT 10
+  )
+```
+
+<img width="655" height="557" alt="obj2q1" src="https://github.com/user-attachments/assets/a5b7c1af-b515-4ead-abbd-4ca8a9926c40" />
+
+*	The presence of 2 Bayern Munich players, Luis Díaz and Michael Olise, topping the list side by side, signifies their elite stance by reaching double digits in both goals and assists, in the same campaign. This also supports Harry Kane’s statistics in the Objective 1 findings as a high volume striker. It goes to say how much of a deadly attacking trio - Olise, Kane, Diaz – is across European Championships. 
+*	Barcelona featuring 3 players on the list, Yamal, Raphinha and Rashford, showcases the remarkable playmaking capability of Barca. This, along with Objective 1 findings which featured 2 barca players, highlights the attacking brilliance of Barcelona. 
+*	Bruno Fernandes recorded the highest assists among the list, being the only player to get over 20 assists across Europe’s Top 5 Leagues, highlighting his role as a high volume playmaker for Manchester United.
+*	Federico Dimarco stands out on the list as a unique entry, delivering 7 goals and 16 assists while operating as a wide midfield/wide back position from Inter Milan.
+
+
 
