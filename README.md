@@ -142,7 +142,7 @@ LIMIT 10
 
 Output-
 
-<img width="740" height="234" alt="obj1op" src="https://github.com/user-attachments/assets/069ced20-d017-49e8-a924-4ddfc421b2df" />
+<img width="588" height="198" alt="obj1op" src="https://github.com/user-attachments/assets/35033b31-41d3-4e56-851a-89aa90ffb8db" />
 
 Key Findings-
 *	Ermedin Demirović leads in the list among all qualifying starting forwards across the Top 5 European leagues. He boasts an impressive 0.27 conversion rate while also maintaining 53% shot accuracy, meaning over half of the shots he has taken hit the goal target.
