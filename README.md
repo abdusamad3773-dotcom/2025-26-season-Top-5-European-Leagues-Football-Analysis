@@ -142,7 +142,7 @@ LIMIT 10
 
 Output-
 
-<img width="588" height="198" alt="obj1op" src="https://github.com/user-attachments/assets/eb143a60-0ce2-4481-8e2e-637f3dfb80ad" />
+<img width="1176" height="395" alt="obj1op" src="https://github.com/user-attachments/assets/eb143a60-0ce2-4481-8e2e-637f3dfb80ad" />
 
 
 Key Findings-
