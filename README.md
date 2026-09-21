@@ -153,7 +153,7 @@ Key Findings-
 *	João Pedro being on the list supports his rightful individual achievement he earned where he was named Chelsea’s Men’s Player of the Season. 
 
 
-## Objective 2 
+### Objective 2 
 
 **Best Playmakers and Creative Players**
 
@@ -218,7 +218,7 @@ FROM
 *	Federico Dimarco stands out on the list as a unique entry, delivering 7 goals and 16 assists while operating as a wide midfield/wide back position from Inter Milan.
 
 
-## Offensive Effectiveness VS Offensive Efficiency
+### Offensive Effectiveness VS Offensive Efficiency
 
 **Analysis of Combined Datasets (Standard Stats and Shooting Stats)**
 
@@ -306,7 +306,7 @@ Key Findings-
 *	Bruno Fernandes recording the highest assists, and also being the only player to reach over 20 assists, but exhibiting the lowest goals per shot ratio among the list with just 0.06, supports his profile as a pure playmaker rather than a full blown striker.
 *	Michael Olise, Lamine Yamal and Luis Díaz being the only players with double digits on both goals and assists, showcases their dual threat offensive impact.
 
-## Objective 3 
+### Objective 3 
 
 **Defensive Work Rates with Disciplinary Conduct**
 
@@ -383,7 +383,7 @@ Key Findings-
 *	Jon Arambaru ranks in the top 4 of both the tables, with high defensive volume and efficiency, but he also has the highest yellow card bookings received with having received 11 yellow cards.
 
 
-## Objective 4
+### Objective 4
 
 **Goalkeeping Shots Faced and Save Performance**
 
