@@ -449,3 +449,16 @@ WHERE
 <img width="1443" height="534" alt="obj4q1" src="https://github.com/user-attachments/assets/e4029e82-2c38-4599-bb7e-1cbb7a39f89b" />
 
 * Arijanet Muric has recorded an amazing feat of 73.3% save percentage, with 118 saves made out of the 161 shots on target he has faced, but has only 6 clean sheets throughout the season. This demonstrates how goalkeeper’s performance as an individual can still shine even when overall defence limits clean sheets.
+
+
+## Share phase:
+
+As the analysis of the data has been concluded, The results have to be shared in a way that it can be easily and meaningfully understood to stakeholders. I will need to translate the results of the analysis into visualisations. For this purpose, I will be using Tableau, a business intelligence and visualisation software, for converting the data into meaningful visualisations. In order for the results to be exported to Tableau, I connected my BigQuery Google Account so it could access my datasets. From there on, I selected the relevant project and datasets my data was located on. I selected New Custom SQL option from the Data Source UI and ran the same queries I ran on the analysis phase for each objectives. 
+
+I customized the colors of the Legend palettes, which consists of all 5 leagues in the dataset, by assigning hex colors aligned with the league branding:
+
+* **Premier League:** Electric Purple (`#963cff`) ![#963cff](https://img.shields.io/badge/-%23963cff?style=flat-square&color=963cff) 
+* **La Liga:** Coral (`#ff8559`) ![#ff8559](https://img.shields.io/badge/-%23ff8559?style=flat-square&color=ff8559) 
+* **Bundesliga:** Crimson Red (`#d3010c`) ![#d3010c](https://img.shields.io/badge/-%23d3010c?style=flat-square&color=d3010c)
+* **Ligue 1:** Neon Lime (`#c1e910`) ![#c1e910](https://img.shields.io/badge/-%23c1e910?style=flat-square&color=c1e910)
+* **Serie A:** Cyan (`#008fd5`) ![#008fd5](https://img.shields.io/badge/-%23008fd5?style=flat-square&color=008fd5)
