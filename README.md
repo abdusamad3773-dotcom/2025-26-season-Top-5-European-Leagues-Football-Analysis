@@ -218,4 +218,90 @@ FROM
 *	Federico Dimarco stands out on the list as a unique entry, delivering 7 goals and 16 assists while operating as a wide midfield/wide back position from Inter Milan.
 
 
+## Offensive Effectiveness VS Offensive Efficiency
 
+**Analysis of Combined Datasets (Standard Stats and Shooting Stats)**
+
+SQL Query using INNER JOIN-
+
+```sql
+SELECT 
+  std.Player AS Player,
+  std.Nation AS Nation,
+  std.Squad AS Squad,
+  std.Comp AS League,
+  std.`90s` AS Minutes_Played,
+  std.Gls AS Goals,
+  std.Ast AS Assists,
+  std.`G+A` AS Total_GA,
+  sho.G_Sh AS Goals_Per_Shot,
+  sho.G_SoT AS Goals_Per_Shot_On_Target
+FROM
+  `abdu-project-2026.footystories_data.standardstats` AS std
+INNER JOIN
+  `abdu-project-2026.footystories_data.shootingstats` AS sho
+  ON std.Player = sho.Player
+  AND std.Squad = sho.Squad
+WHERE
+  (std.Primary_Pos = 'FW'
+  OR std.Primary_Pos = 'MF')
+  AND std.`90s` >= 15.0
+ORDER BY
+  std.`G+A` DESC
+LIMIT 10
+```
+
+Output-
+
+<img width="1226" height="455" alt="eveop" src="https://github.com/user-attachments/assets/44ac2e64-aef0-4f9c-a343-0ff17fc678bc" />
+
+
+I used a dual key for the inner join function here which were for Players and Squad. This was because of the fact that Players column were having 2 or more values. This happened because there were some players who played in 2 or more clubs in a single season because of mid season transfers, or some players may have exactly the same names. Using just a single link would have lead to rows with same names having crossed over or combined values. I checked and verified for the duplication as seen from the SQL queries below, using both Players and Squad as links for INNER JOIN ensured the maximum data integrity.
+
+
+```sql
+SELECT
+  COUNT(*) AS Total_Rows,
+  COUNT(DISTINCT Player) AS Unique_Players,
+  COUNT(*) - COUNT(DISTINCT Player) AS Difference
+FROM
+  `abdu-project-2026.footystories_data.standardstats`
+```
+
+<img width="502" height="406" alt="eveq1" src="https://github.com/user-attachments/assets/a386d8b6-3f84-4e86-8e68-1ae159ebd8ce" />
+
+
+```sql
+SELECT
+  COUNT(*) AS Players_With_Multiple_Rows
+FROM (
+  SELECT Player
+  FROM `abdu-project-2026.footystories_data.standardstats`
+  GROUP BY Player
+  HAVING COUNT(*) > 1
+)
+```
+
+<img width="580" height="435" alt="eveq2" src="https://github.com/user-attachments/assets/ff836a41-609a-4da9-83f1-0f036b350a34" />
+
+
+```sql
+SELECT
+  COUNT(*) AS Players_With_Multiple_Rows
+FROM (
+  SELECT Player
+  FROM `abdu-project-2026.footystories_data.standardstats`
+  GROUP BY Player
+  HAVING COUNT(*) > 2
+)
+```
+
+<img width="541" height="437" alt="eveq3" src="https://github.com/user-attachments/assets/44a0528b-4489-46c5-b86a-1a2ee54d088f" />
+
+
+Key Findings-
+*	Harry Kane leads in most goals contribution with a total of 41 Goals + Assists and also recorded the highest Goals per shot among the list, supporting his stance as an extraordinarily high volume striker this season.
+*	Esteban Lepaul recorded the highest goals per shot on target on list with a score of 0.46, followed by Erling Haaland, Luis Díaz and Deniz Undav recording the 2nd highest goals per shot on target with a score of 0.41, showcasing their efficiency rate at goals from shots on target taken.
+*	Michael Olise stands out as an exceptional entry with being in the top 3 with 34 goal contributions, while being a natural playmaker from a wide/midfield role.
+*	Bruno Fernandes recording the highest assists, and also being the only player to reach over 20 assists, but exhibiting the lowest goals per shot ratio among the list with just 0.06, supports his profile as a pure playmaker rather than a full blown striker.
+*	Michael Olise, Lamine Yamal and Luis Díaz being the only players with double digits on both goals and assists, showcases their dual threat offensive impact. 
