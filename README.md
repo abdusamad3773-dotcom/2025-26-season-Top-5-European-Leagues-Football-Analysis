@@ -304,4 +304,148 @@ Key Findings-
 *	Esteban Lepaul recorded the highest goals per shot on target on list with a score of 0.46, followed by Erling Haaland, Luis Díaz and Deniz Undav recording the 2nd highest goals per shot on target with a score of 0.41, showcasing their efficiency rate at goals from shots on target taken.
 *	Michael Olise stands out as an exceptional entry with being in the top 3 with 34 goal contributions, while being a natural playmaker from a wide/midfield role.
 *	Bruno Fernandes recording the highest assists, and also being the only player to reach over 20 assists, but exhibiting the lowest goals per shot ratio among the list with just 0.06, supports his profile as a pure playmaker rather than a full blown striker.
-*	Michael Olise, Lamine Yamal and Luis Díaz being the only players with double digits on both goals and assists, showcases their dual threat offensive impact. 
+*	Michael Olise, Lamine Yamal and Luis Díaz being the only players with double digits on both goals and assists, showcases their dual threat offensive impact.
+
+## Objective 3 
+
+**Defensive Work Rates with Disciplinary Conduct**
+
+To evaluate defenders who have high defensive work rates and statistics along with their disciplinary conduct during matches, The defensivestats table will be used for the analysis. Here, The analysis is done in 2 parts with 2 queries run. The first query shows the total raw defensive volume alongside their total season discipline. The second query shows the data in per 90 minutes normalised ratios using calculations to measure defensive involvements per game. The analysis here focused on total defensive actions and fouls committed.
+
+For both queries, I have applied filters where Primary Position only equates to DF and a minimum playing time of 15 full matches (1350 minutes).
+
+For the first query, I ordered all records by total defensive actions in descending order first, and then ordered by fouls committed in ascending order.
+
+For the second query, I ordered all records by defensive actions per 90 minutes. I also rounded the calculated figures to just 2 decimal places.
+
+SQL Query 1-
+
+```sql
+SELECT
+  Player,
+  Nation,
+  Squad,
+  Comp AS League,
+  `90s`,
+  Fls AS Fouls_Committed,
+  Int AS Interceptions,
+  TklW AS Tackles_Won,
+  (Int + TklW) AS Total_Defensive_Actions,
+  CrdY AS Yellow_Cards,
+  CrdR AS Red_Cards
+FROM
+  `abdu-project-2026.footystories_data.defensivestats`
+WHERE
+  Primary_Pos = 'DF'
+  AND `90s` >= 15.0
+ORDER BY
+  Total_Defensive_Actions DESC,
+  Fouls_Committed ASC
+LIMIT 10
+```
+
+Output 1-
+
+<img width="1367" height="450" alt="obj3op1" src="https://github.com/user-attachments/assets/99642780-2415-4577-8319-2a1693790b4f" />
+
+
+SQL Query 2-
+```sql
+SELECT 
+  Player,
+  Squad,
+  Comp AS League,
+  `90s`,
+  ROUND((TklW + Int) / `90s`, 2) AS Defensive_Actions_Per_90,
+  ROUND(Fls / `90s`, 2) AS Fouls_Per_90,
+  CrdY AS Yellow_Cards,
+  CrdR AS Red_Cards
+FROM 
+  `abdu-project-2026.footystories_data.defensivestats`
+WHERE 
+  Primary_Pos = 'DF'
+  AND `90s` >= 15.0
+ORDER BY
+  Defensive_Actions_Per_90 DESC
+LIMIT 10
+```
+
+Output 2-
+
+<img width="1050" height="442" alt="obj3op2" src="https://github.com/user-attachments/assets/01ca836f-8d60-4cc4-a352-04f0073fef24" />
+
+
+Key Findings-
+* Victor Nelsson and Malang Sarr both had the same defensive output of 120 total defensive actions, but Malang Sarr claims the top shot as he has fewer fouls committed of 21, which is less than half the fouls committed by Victor Nelsson i.e. 44.
+*	Gabriel Suazo tops the list in the normalised per 90 metrics with 3.91 defensive actions done per 90 minutes, showcasing him as the most active defender per match.
+*	Malang Sarr stands out as an extraordinary entry with topping 1st in total defensive volume and top 3 in defensive output per 90 minutes. He has the highest defensive actions of the season with 120, 3.69 defensive actions per match and 0.65 fouls comitted per match, which is the lowest among the cohort.
+*	Oumar Solet features in the top 5 with 104 total defensive actions, with just 1 yellow card received throughout the entire season, shows his disciplinary commitment towards the game.
+*	Jon Arambaru ranks in the top 4 of both the tables, with high defensive volume and efficiency, but he also has the highest yellow card bookings received with having received 11 yellow cards.
+
+
+## Objective 4
+
+**Goalkeeping Shots Faced and Save Performance**
+
+To evaluate goalkeepers who performed at high standards under heavy pressure. The goalkeepingstats table will be analysed. The table consists of various goalkeeping metrics including Goals Conceded, Shots on Target Against, Saves and Clean Sheets. The analysis here will be done on the basis of shots on target faced and save percentage.
+
+I applied subqueries here for the purpose of calculating the average values and establishing them as the minimum threshold. Subqueries were applied to both SoTA and Save%. There was a filter applied to all the subqueries and the main query which required a minimum playing time of 15 full matches (1350 minutes).
+
+SQL Query-
+```sql
+SELECT
+  Player,
+  Nation,
+  Squad,
+  Comp AS League,
+  `90s`,
+  SoTA AS Shots_On_Target_Faced,
+  Saves,
+  `Save%` AS Saves_Percentage,
+  CS AS Clean_Sheets,
+FROM
+  `abdu-project-2026.footystories_data.goalkeepingstats`
+WHERE
+  `90s` >= 15.0
+  AND SoTA > (SELECT 
+    AVG(SoTA)
+  FROM 
+    `abdu-project-2026.footystories_data.goalkeepingstats`
+  WHERE
+     `90S` >= 15.0)
+  AND `Save%` > (SELECT 
+    AVG(`Save%`)
+  FROM 
+    `abdu-project-2026.footystories_data.goalkeepingstats`
+  WHERE 
+    `90s` >= 15.0)
+ORDER BY 
+  `Save%` DESC
+LIMIT 10
+```
+
+Output-
+
+<img width="1059" height="457" alt="obj4op" src="https://github.com/user-attachments/assets/e11ccd49-f2d5-4b8c-8155-f008460050f0" />
+
+Key Findings-
+*	Mile Svilar dominates the table by ranking 1st with a Save Percentage of 77.5%, with 107 shots saved out of 138 shots on target he has faced. He also managed to keep 18 clean sheets, which is also the highest among the list.
+*	Aarón Escandell, despite having faced 201 shots on target, the most of any other goalkeeper throughout the season (as shown by the query below), has still managed to keep a 72.1% save percentage with 145 saves made. This highlights his exceptional performance under high workload.
+
+```sql
+SELECT
+  Player,
+  Squad,
+  SoTA
+FROM
+  `abdu-project-2026.footystories_data.goalkeepingstats`
+WHERE
+  SoTA =(SELECT
+    MAX(SoTA)
+  FROM
+    `abdu-project-2026.footystories_data.goalkeepingstats`)
+```
+
+<img width="1443" height="534" alt="obj4q1" src="https://github.com/user-attachments/assets/e4029e82-2c38-4599-bb7e-1cbb7a39f89b" />
+
+* Arijanet Muric has recorded an amazing feat of 73.3% save percentage, with 118 saves made out of the 161 shots on target he has faced, but has only 6 clean sheets throughout the season. This demonstrates how goalkeeper’s performance as an individual can still shine even when overall defence limits clean sheets.
