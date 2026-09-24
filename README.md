@@ -107,7 +107,7 @@ To delve into the analysis and extract meaningful insights from the dataset, I w
 3.	Identify defenders that stand out in having exceptional defensive work rates alongside their high disciplinary risks
 4.	Identify goalkeepers that achieve high save percentages despite facing high shots on target.
 
-### Objective 1 
+### Objective 1: 
 
 **Forward Shooting Efficiency & Goal Conversion**
 
@@ -153,7 +153,7 @@ Key Findings-
 *	João Pedro being on the list supports his rightful individual achievement he earned where he was named Chelsea’s Men’s Player of the Season. 
 
 
-### Objective 2 
+### Objective 2: 
 
 **Best Playmakers and Creative Players**
 
@@ -218,7 +218,7 @@ FROM
 *	Federico Dimarco stands out on the list as a unique entry, delivering 7 goals and 16 assists while operating as a wide midfield/wide back position from Inter Milan.
 
 
-### Offensive Effectiveness VS Offensive Efficiency
+### Offensive Effectiveness VS Offensive Efficiency:
 
 **Analysis of Combined Datasets (Standard Stats and Shooting Stats)**
 
@@ -306,7 +306,7 @@ Key Findings-
 *	Bruno Fernandes recording the highest assists, and also being the only player to reach over 20 assists, but exhibiting the lowest goals per shot ratio among the list with just 0.06, supports his profile as a pure playmaker rather than a full blown striker.
 *	Michael Olise, Lamine Yamal and Luis Díaz being the only players with double digits on both goals and assists, showcases their dual threat offensive impact.
 
-### Objective 3 
+### Objective 3: 
 
 **Defensive Work Rates with Disciplinary Conduct**
 
@@ -383,7 +383,7 @@ Key Findings-
 *	Jon Arambaru ranks in the top 4 of both the tables, with high defensive volume and efficiency, but he also has the highest yellow card bookings received with having received 11 yellow cards.
 
 
-### Objective 4
+### Objective 4:
 
 **Goalkeeping Shots Faced and Save Performance**
 
@@ -462,3 +462,63 @@ I customized the colors of the Legend palettes, which consists of all 5 leagues 
 * **Bundesliga:** Crimson Red (`#d3010c`) ![#d3010c](https://img.shields.io/badge/-%23d3010c?style=flat-square&color=d3010c)
 * **Ligue 1:** Neon Lime (`#c1e910`) ![#c1e910](https://img.shields.io/badge/-%23c1e910?style=flat-square&color=c1e910)
 * **Serie A:** Cyan (`#008fd5`) ![#008fd5](https://img.shields.io/badge/-%23008fd5?style=flat-square&color=008fd5)
+
+
+### Objective 1:
+
+<img width="653" height="374" alt="obj1viz" src="https://github.com/user-attachments/assets/76a41ef8-0b86-47af-9d50-2fcbf5f19d6f" />
+
+
+### Objective 2:
+
+<img width="650" height="374" alt="obj2viz" src="https://github.com/user-attachments/assets/09c6f640-88c9-4c88-ad21-c5c8ccc4b67e" />
+
+### Offensive Effectivness VS Efficiency:
+
+<img width="431" height="387" alt="eveviz1" src="https://github.com/user-attachments/assets/6d169ccd-b964-4c09-bbdd-2f493f30fae7" />
+
+<br>
+<br>
+
+<img width="650" height="387" alt="eveviz2" src="https://github.com/user-attachments/assets/9b8e2d33-edc3-4edd-ad26-c996966a2dae" />
+
+<br>
+<br>
+
+<img width="622" height="374" alt="eveviz3" src="https://github.com/user-attachments/assets/daa3970c-6a29-4dfb-911c-1a2f8fdded13" />
+
+### Objective 3:
+
+<img width="600" height="600" alt="obj3dash" src="https://github.com/user-attachments/assets/ee69474c-e4d0-4b8d-86f6-1c86ac4ee13c" />
+
+<br>
+<br>
+
+<img width="651" height="374" alt="obj3viz1" src="https://github.com/user-attachments/assets/e6b6d22a-6f35-4001-976f-2189c5a02ee2" />
+
+Reference for Quadrants in the above scatter plot:
+
+<img width="666" height="388" alt="obj3viz2" src="https://github.com/user-attachments/assets/b7305fd8-9d50-4ad1-beee-e534e618c3cb" />
+
+### Objective 4:
+
+<img width="666" height="374" alt="obj4viz" src="https://github.com/user-attachments/assets/414cb727-aa2d-43f3-9bc7-ef482bc45c04" />
+
+
+## Act Phase:
+
+The analysis turned to be success and there were some very interesting findings found out that are notable and post worthy to be known and shared to viewers. Some key insights from the analysis are as follows-
+*	Harry Kane, the English Striker who plays for Bayern Munich, stands out as the exceptionally high volume striker with having a top goal conversion rate of 0.22 and having attained the highest goal contributions out of any player in the season, with 36 goals (the most goals scored by a player in the season) and 5 assists, totaling to 41 goal contributions.
+*	Michael Olise, a French playmaker who plays for Bayern Munich, is gifted with flawless playmaking ability having recorded 34 G/A (15 goals + 19 assists) and having a stellar goal contribution rate of 1.32 per 90 minutes, which is more than 40% the average goal contribution of the rest of the players in the top 10 playmakers leaderboard.
+*	FC Barcelona had 6 players, featured among the analysis done across all the objectives, showcasing how complete the squad FC Barcelona was and their deadly potential in the upcoming seasons. Hansi Flick is doing an excellent job managing the team.
+*	Bruno Fernandes, a Portuguese attacking midfielder of Manchester United, has a unique presence with being the only player to record over 20 assists throughout the season. However his shot to goal conversion rates, which is as low of 0.06, is not as satisfactory as compared to the standards of other top goal contributers. It speaks about his role as a natural playmaker rather than burstful striker.
+*	The presence of the golden trio of Bayern Munich with the likes of Luis Díaz, Harry Kane, and Michael Olise, in the top 10 goal contributors of the season shows the remarkable offensive capability of Bayern Munich. Other team defence has to brace themselves and watch out for this deadly trio in the upcoming seasons. 
+*	Malang Sarr, a French defender for RC Lens, stands out as an high volume and disciplined defender with having performed the highest defensive output of 120 defensive actions while comitting a low amount of fouls and having received less yellow cards. He rightfully deserved the spot for Ligue 1 Team of the Season.
+*	Mile Svilar, a Serbian Belgian goalkeeper, had an outstanding season for AS Roma, having recorded the highest save percentage out of total shots on target faced with 77.5%, and winning the Serie A Best Goalkeeper of the Season for the second time in a row.
+*	Aaron Escandell, a Spanish goalkeeper for Real Oviedo, while being the only goalkeeper to face more than 200 shots on target, still broke into the top 10 goalkeepers with highest save percentages, with save of percentage of 72.1%, showcasing his ability to maintain high efficiency while keeping up with the high volume. 
+
+Recommendations:
+*	Create visualised content for each of the players spotlightning the top on each of the objectives, which cover the core fields of football (Attacking, Playmaking, Defending and Goalkeeping,)  to deliver balanced coverage.
+*	Post about the statisical anomalies and interesting facts found from the analysis, like Bruno Fernandes recording the highest assists but very low goal to shot conversion rate or Harry Kane having taken nearly double the average shots taken and still managing to maintain high conversion rates.
+*	Celebrate the presence of players who come from low level or mid table teams and still being able to keep up on the top achievers list, with the likes of players like Vedat Muriqi (RCD Mallorca), Herve Koffi (Angers SCO).etc. , to appeal fan engagement from those beyond the top clubs.
+
