@@ -473,7 +473,7 @@ I customized the colors of the Legend palettes, which consists of all 5 leagues 
 
 <img width="650" height="374" alt="obj2viz" src="https://github.com/user-attachments/assets/09c6f640-88c9-4c88-ad21-c5c8ccc4b67e" />
 
-### Offensive Effectivness VS Efficiency:
+### Offensive Effectiveness VS Offensive Efficiency:
 
 <img width="431" height="387" alt="eveviz1" src="https://github.com/user-attachments/assets/6d169ccd-b964-4c09-bbdd-2f493f30fae7" />
 
