@@ -5,6 +5,8 @@
 ### Introduction: 
 This case study aims to showcase the useful skills and knowledge I have developed throughout the Courses 1 – 7 and to apply them to complete the Capstone Project for Course 8. I will be performing a data analysis on a football dataset for a fictional football community and social media brand, FootyStories. I will progress through each stage of the Data Analysis process ,i.e., Ask, Prepare, Process, Analyze, Share and Act to successfully complete the given task and deliver meaningful insights.
 
+This project is part of Google Data Analytics Professional Certificate. [Google Data Analytics Capstone Project: Complete a Case Study](https://www.coursera.org/learn/google-data-analytics-capstone/supplement/f9fgU/course-8-overview)
+
 ### Scenario:
 I am an Aspiring Data Analyst, who is part of a popular football community and social media page, FootyStories. The team wants me to find some insights, from the previous season football statistics across the Top 5 UEFA leagues, to make a post on some interesting findings from the previous seasons. My task is to analyze data from the Top 5 European leagues to capture the anomalies that are unknown to the fans and produce data visualisations that tell a story. 
 
